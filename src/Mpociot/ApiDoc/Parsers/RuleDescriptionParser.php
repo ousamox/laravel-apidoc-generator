@@ -15,7 +15,7 @@ class RuleDescriptionParser
      */
     public function __construct($rule = null)
     {
-        $this->rule = "apidoc::rules.{$rule}";
+        $this->rule = "rules.{$rule}";
     }
 
     /**
@@ -45,7 +45,7 @@ class RuleDescriptionParser
      */
     protected function ruleDescriptionExist()
     {
-        return trans()->hasForLocale($this->rule) || trans()->hasForLocale($this->rule, self::DEFAULT_LOCALE);
+        return trans($this->rule);
     }
 
     /**
@@ -53,10 +53,7 @@ class RuleDescriptionParser
      */
     protected function makeDescription()
     {
-        $description = trans()->hasForLocale($this->rule) ?
-                            trans()->get($this->rule) :
-                            trans()->get($this->rule, [], self::DEFAULT_LOCALE);
-
+        $description = trans($this->rule);
         return $this->replaceAttributes($description);
     }
 
