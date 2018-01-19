@@ -1,4 +1,5 @@
 ## Laravel API Documentation Generator
+### FORK TO FIX waavi/translation DEPENDENCIES
 
 Automatically generate your API documentation from your existing Laravel routes. Take a look at the [example documentation](http://marcelpociot.de/whiteboard/).
 
